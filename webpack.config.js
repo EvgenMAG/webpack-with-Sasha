@@ -13,7 +13,7 @@ module.exports = (env) => merge({
     context: path.resolve(__dirname, "src"),
     entry: './index.js',
     output: {
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "dist"),
         filename: "[name].bundle.js"
     },
     module: {
@@ -31,13 +31,13 @@ module.exports = (env) => merge({
                         limit: false,
                     }
                 }]
-            }
+            },
             {
-                test: /\.html$/
+                test: /\.html$/,
                 use:["html-loader"]
-            }
+            },
             {
-                test:/\hbs$/
+                test:/\hbs$/,
                 use:["handlebars-loader"]
             }
         ],
